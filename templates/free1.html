@@ -1,0 +1,70 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>free1</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100  mt-32 flex items-center">
+
+  {% include 'include/nav.html' %}
+  <div class="container mx-auto flex p-2">
+    
+    <div class=" py-16 w-1/3 mr-4 p-2">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <img src="{% static 'f12.jpg' %}" alt="" class="mb-4 rounded-md h-32">
+            <h3 class="text-xl font-semibold mb-4">John dork</h3>
+            <p class="text-gray-600">Graphic Designer with a passion for creativity.</p>
+        </div>
+    </div>
+  
+    
+    <div class="bg-white py-2 w-2/3 p-2 mx-10">
+        <h2 class="text-xl font-semibold mb-4 ml-6">John dork</h2>
+        <h3 class="text-gray-600 font-bold ml-6">Graphic Designer</h3>
+        <p class="ml-6 mb-8">Developing unique and striking logos for businesses across industries<br>
+            Designing eye-catching business cards to leave a strong first impression<br>
+            Creating compelling graphics for print merchandise such as t-shirts and related business swag<br>
+            Crafting beautiful imagery for special interests like pet illustrations or iconic brand imagery<br>
+            Developing visually striking LinkedIn cover pages or other social media profiles<br>
+            Reinventing existing graphics and layouts for improved design aesthetics</p>
+
+        <a href="#contact" class="bg-blue-500 text-white mt-8 font-semibold py-2 px-6 rounded-full hover:bg-blue-700 ml-6 transition duration-300 ease-in-out ">Hire Me</a>
+    </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com./css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .link{
+            transition: opacity 2s ease;
+        }
+        .link:hover{
+            opacity:1;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    {% include 'include/nav.html' %}
+
+    {% for message in messages %}
+        <div id="successMessage" class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+            <strong class="font-bold">{{ message }}</strong>
+        </div>
+    {% endfor %}
+    <section
+        style="background-image: url('../static/f4.jpg'); background-size: cover; width: 100%; height: 616px; margin-top: 120px;">
+
+
+
+        <div class="flex flex-wrap md:auto " style="h-140vh; width: 100%; background-size: cover;">
+
+            <div>
+                <h1 class="ml-10 mt-20 text-6xl text-white font-bold">
+                    Connect <span class="text-blue-500">Hub!
+                </h1>
+                <p class="ml-10 mt-8 text-white text-xl">This is an online platform that connects freelance designers,
+                    writers,
+                    <br> And a wide range of other creative talent with clients
+                    <br> or companies looking to hire them for remote jobs
+                </p>
+                <button
+                    class="bg-blue-500 p-2 m-8 text-white border-2 border-blue-500 font-bold rounded-full px-6 ml-10 mt-12">Talent</button>
+                <button class=" mx-2 text-white cursor-pointer px-4 py-2 rounded font-bold dropdown hover:underline"><a href="{% url 'reg2' %}">Registration</a>
+                   </button>
+                
+
+            </div>
+        </div>
+    </section> 
+    <div class="text-center mt-16 link" id="discover" >
+        <h1 class="text-blue-500 font-bold text-5xl">
+            A unique model of access to talent <br>
+            And talent ecosystem.
+        </h1>
+    </div>
+
+    <div class="grid grid-cols-4 gap-2 mt-20 rounded-border-2">
+
+        
+        <div class=" border-2 w-64 ml-16 rounded-2xl">
+            <img src="{% static 'f5.jpg' %}" alt="" class=" h-80 w-48 rounded-2xl">
+            <h3 class="ml-6 font-bold mt-2">Employees supported</h3>
+            <p class="ml-6 mt-2">Experienced consultant in<br>Project Management,<br>Business Strategy and<br>Professsional Trainings</p>
+        </div>
+        <div class=" border-2 w-64 ml-10 rounded-2xl">
+            <img src="{% static 'f9.png' %}" alt="" class=" h-80 w-72 rounded-2xl">
+            <h3 class="ml-6 font-bold mt-2">Private Freelance Database</h3>
+            <p class="ml-6 mt-2">Independent Expert who<br>Don't wish to be Displayed,<br>On public platform</p>
+        </div>
+        <div class=" border-2 w-64 ml-10 rounded-2xl">
+            <img src="{% static 'f7.jpg' %}" alt="" class=" h-80 w-72 rounded-2xl">
+            <h3 class="ml-6 font-bold mt-2">Public Freelance Platform</h3>
+            <p class="ml-6 mt-2">Qualified profiles with<br>Skills,TJM,Avalability,<br>dates,etc</p>
+        </div>
+        <div class=" border-2 w-64 ml-16 rounded-2xl">
+            <img src="{% static 'f8.png' %}" alt="" class=" h-68 w-72 rounded-2xl">
+            <h3 class="ml-6 font-bold mt-2">VSE&SME</h3>
+            <p class="ml-6 mt-2">Employees of 1,000 VSEs&<br>SMEs with digital expertise,<br>with the ability to make<br>fixed-price commitments</p>
+        </div>
+    </div>
+    <div class="max-w-4xl mx-auto flex flex-wrap mt-5">
+        <div>  <p class="ml-8 text-sm font-bold">copyright @ 2024 marketplace. powered by freelance marketplace.</p></div>
+          <div class="ml-44">
+            <i class="fa-brands fa-facebook-f px-2"></i>
+            <i class="fa-brands fa-youtube px-2"></i>
+            <i class="fa-brands fa-twitter px-2"></i>
+            <i class="fa-brands fa-instagram px-2"></i>
+            <i class="fa-brands fa-google px-2"></i>
+            
+          </div>
+        </div>
+
+        <script>
+            // Function to show and automatically close messages
+            function showMessage(messageType) {
+              const messageElement = document.getElementById(messageType);
+              messageElement.classList.remove('hidden');
+              setTimeout(() => {
+                messageElement.classList.add('hidden');
+              }, 3000); // 3000 milliseconds (3 seconds)
+            }
+          
+            // Example usage (you can call this function in your Django template after rendering messages)
+            showMessage('successMessage'); // Show success message
+            // showMessage('errorMessage'); // Show error message
+          </script>
+          <footer class="bg-gray-800 text-white py-8 mt-4">
+            <div class="container mx-auto text-center">
+              <p>&copy; 2024 Your Freelance Marketplace.</p>
+            </div>
+          </footer>
+
+</body>
+
+</html>
+
+
+
+
+
+<!-- <!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com./css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    </head>
+
+
+    <body class="bg-white">
+        <nav class="bg-purple-500 p-5">
+            <div>
+                <span class=" text-white text-3xl p-5 font-bold font-sans">FMC</span>
+            </div>
+            
+            <ul class="md:flex fixed top-0 right-0 p-6">
+                <li class="mx-4 text-white text-sm  cursor-pointer px-4 py-2  rounded font-bold hover:underline"><a href="">Home</a></li>
+                <li class="mx-4 text-white text-sm  cursor-pointer px-4 py-2  rounded font-bold"><a href="">Jobs
+                    </a></li>
+                    
+                <li class="mx-4 text-white text-sm  cursor-pointer px-4 py-2  rounded font-bold"><a href="">freelancers</a></li>
+                <li class="mx-4 text-white text-sm  cursor-pointer px-4 py-2  rounded font-bold"><a href="register.html">Post job</a></li>
+                <li class="mx-4 text-white text-sm  cursor-pointer px-4 py-2  rounded font-bold"><a href="">Discover</a></li>
+                <li class="mx-4 text-white text-sm  cursor-pointer px-4 py-2  rounded font-bold"><a href="">Help</a></li>
+                </ul>
+            
+                </nav>
+                <div class="justify-center">
+                    <h1 class="text-4xl text-purple-500 font-bold p-2 m-8">Freelance<span
+                            class="text-4xl text-black  p-2">MarketPlace</span><br>
+                        <span class="text-4xl text-black">of Creatives</span>
+                    </h1>
+                    <p class="ml-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ut <br>magnam a libero ipsum
+                        eveniet
+                        veritatis vitae earum neque,
+                        debitis cupiditate <br>illo rerum, porro quae dolor nisi velit id soluta?</p>
+                        <button class="bg-purple-500 px-8 p-2  rounded font-bold m-8 text-white ml-32">Get more</button>
+                        </div>
+                        <img src="team.jpg">
+                        <div class="max-w-4xl mx-auto flex flex-wrap">
+                            <div>  <p class="ml-8 text-sm font-bold">copyright @ 2024 marketplace. powered by freelance marketplace.</p></div>
+                              <div class="ml-44">
+                                <i class="fa-brands fa-facebook-f px-2"></i>
+                                <i class="fa-brands fa-youtube px-2"></i>
+                                <i class="fa-brands fa-twitter px-2"></i>
+                                <i class="fa-brands fa-instagram px-2"></i>
+                                <i class="fa-brands fa-google px-2"></i>
+                                
+                              </div>
+                            </div>
+
+
+
+
+
+
+
+</body>
+
+
+
+</html> -->

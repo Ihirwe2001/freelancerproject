@@ -1,0 +1,67 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>business page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="bg-blue-900 text-white h-screen flex items-center justify-center">
+
+  {% include 'include/nav.html' %}
+
+
+  <div class="bg-white p-8 rounded-lg shadow-md w-96 mt-24">
+    <h1 class="text-2xl font-semibold mb-6 text-black">Customer Registration</h1>
+
+    
+    <form>
+      <div class="mb-4">
+        <label for="fullName" class="block text-sm font-medium text-black">Full Name</label>
+        <input type="text" id="fullName" name="fullName" class="mt-1 p-2 w-full bg-white border rounded-md focus:outline-none focus:border-blue-500 text-black">
+      </div>
+
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-black">Email Address</label>
+        <input type="email" id="email" name="email" class="mt-1 p-2 w-full bg-white border rounded-md focus:outline-none focus:border-blue-500 text-black">
+      </div>
+
+      <div class="mb-4">
+        <label for="address" class="block text-sm font-medium text-black">Address</label>
+        <input type="text" id="address" name="address" class="mt-1 p-2 w-full bg-white border rounded-md focus:outline-none focus:border-blue-500 text-black">
+      </div>
+
+      <!-- Add more fields as needed -->
+
+      <button type="submit" class="block py-2 px-4 bg-blue-700 hover:bg-blue-600 rounded-md transition duration-300">
+        Submit Registration
+      </button>
+    </form>
+  </div>
+
+</body>
+</html>

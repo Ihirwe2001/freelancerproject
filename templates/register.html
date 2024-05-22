@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>User Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 p-8 mt-32">
+
+  {% include 'include/nav.html' %}
+
+  <div class="max-w-md mx-auto bg-white rounded-md p-8 shadow-md">
+    <h2 class="text-2xl font-semibold mb-4">User Registration</h2>
+    
+    <form action="#" method="POST">
+        
+      {% csrf_token %}
+
+      {{ form.errors }}
+
+        <div class="mb-4">
+            <label for="username" class="block text-gray-600 text-sm font-medium mb-2">Username</label>
+            {{ form.username }}
+        </div>
+
+        
+        <div class="mb-4">
+            <label for="email" class="block text-gray-600 text-sm font-medium mb-2">Email</label>
+            {{ form.email }}
+        </div>
+
+        
+        <div class="mb-4">
+            <label for="password" class="block text-gray-600 text-sm font-medium mb-2">Password</label>
+            {{ form.password1 }}
+        </div>
+
+        
+        <div class="mb-6">
+            <label for="confirmPassword" class="block text-gray-600 text-sm font-medium mb-2">Confirm Password</label>
+            {{ form.password2 }}
+          </div>
+
+        
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Register</button>
+    </form>
+</div>
+  
+<footer class="bg-gray-800 text-white py-8 mt-4">
+  <div class="container mx-auto text-center">
+    <p>&copy; 2024 Your Freelance Marketplace.</p>
+  </div>
+</footer>
+</body>
+</head>
+
+</html>

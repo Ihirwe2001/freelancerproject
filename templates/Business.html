@@ -1,0 +1,136 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>business page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 mt-32">
+
+  {% include 'include/nav.html' %}
+
+  <div>
+    <div class="flex flex-wrap">
+      <div>
+        <h1 class="ml-10 mt-20 text-6xl text-black font-bold">
+          Freelance <span class="text-blue-500">Market</span>Place<br>of Creatives!
+        </h1>
+        <p class="ml-10 mt-8 text-black text-xl">This is an online platform that connects freelance designers,
+          writers,
+          <br> And a wide range of other creative talent with clients
+          <br> or companies looking to hire them for remote jobs
+        </p>
+        <button
+          class="bg-blue-500 text-white border-2 border-blue-500 rounded-full px-4 p-2 hover:shadow-xl hover:mb-2 ml-10 mt-10"><a
+            href="{% url 'contact' %}">Contact</a></button>
+      </div>
+      <div class="  ml-44 mt-20">
+        <img src="{% static 'f10.webp' %}" alt="" class=" h-96 w-96 rounded-full ml-24">
+
+      </div>
+    </div>
+    <div class="flex flex-wrap">
+      <div class="mt-40">
+        <img src="{% static 'f11.jpg' %}" alt="" class=" h-100 w-100 rounded-xl ml-10">
+
+      </div>
+      <div>
+        <h1 class="ml-20 mt-44 text-2xl text-black font-bold">
+          Freelance.com,<span class="text-blue-500">leading player</span>in the job market
+        </h1>
+        <p class=" ml-20 mt-4">We have over 30 years of experience in external talent management.
+          Our vision of the labor and <br>skills market is that of
+          a market undergoing profound transformation:
+        </p>
+        <ul class="ml-24 mt-2">
+          <li style="list-style-type: circle;"><span class="font-bold">Record tensions on the executive market: </span>
+            the main challenge for large organizations is to <br>find the right skills,
+            beyond, and even before knowing, whether they should be employees,<br> service providers or freelancers.
+          </li>
+
+
+          <li style="list-style-type: circle;" class="mt-2"><span class="font-bold">Wage employment increasingly
+              challenged: </span>
+            more and more talents are expressing their <br>desire to leave wage employment to experiment with other
+            forms of employment.</li>
+
+          <li style="list-style-type: circle;" class="mt-2"><span class="font-bold">Freelancing, an increasingly popular
+              status: </span>
+            freelance status meets the new expectations of<br> talents looking for meaning and freedom.</li>
+        </ul>
+
+      </div>
+
+    </div>
+    <div class="">
+      <div class="mt-10 flex flex-wrap">
+        <div>
+          <h1 class="ml-10 mt-24 text-3xl text-black font-bold">
+            Talent as a Service: secure solutions for <br>large companies
+          </h1>
+          <p class=" ml-10 mt-4">Our mission is to respond to<span class="font-bold"> this transformation of the
+              relationship
+              with talents</span> thanks to our <br>model: Talent as a Service (TAAS).<br><br>
+            Our <span class="font-bold">Talent as a Service</span> offer is based on 3 service lines:
+          </p>
+          <ul class="ml-14">
+            <li style="list-style-type: circle;" class="mt-2"><span class=""><span class="font-bold">Sourcing:</span>
+                we find the best talents and expertise thanks to <span class="text-blue-500"> hybrid ecosystem of
+                  talents</span>,<br> freelancers and VSEs/SMEs.</li>
+
+            <li style="list-style-type: circle;" class="mt-2"><span class=""><span class="font-bold">Portage: </span>
+                we take care of all administrative and management aspects of your external talents<br>
+                in France or internationally thanks to our <span class="text-blue-500">salary portage</span>offer,<span
+                  class="text-blue-500">
+                  administrative portage or<br> even our payrlorring</span> offer.</li>
+
+            <li style="list-style-type: circle;" class="mt-2"><span class=""><span class="font-bold">Our
+                  cross-functional and additional services:</span>
+                we enrich and secure the relationship with<br> your external talents thanks to our additional services:
+                <span class="text-blue-500">supplier compliance</span>,<span class="text-blue-500">training<br>
+                  organization</span>
+                and <span class="text-blue-500">community animation</span></li>
+          </ul>
+        </div>
+        <div class="mt-32">
+        <img src="{% static 'f23.jpg' %}" alt="" class=" h-96 w-100 rounded-xl ml-32">
+
+      </div>
+
+      </div>
+    </div>
+    </div>
+    <footer class="bg-gray-800 text-white py-8 mt-4">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 Your Freelance Marketplace.</p>
+      </div>
+    </footer>
+
+</body>
+
+</html>

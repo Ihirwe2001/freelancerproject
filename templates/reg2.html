@@ -1,0 +1,57 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>business page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+
+<body class="bg-blue-900 text-white h-screen flex items-center justify-center">
+
+  {% include 'include/nav.html' %}
+
+
+  <div class="bg-blue-800 p-8 rounded-lg shadow-md w-96 text-center">
+    <h1 class="text-2xl font-semibold mb-6">Choose Registration</h1>
+
+    <div class="space-y-4">
+      <a href="{% url 'freelreg' %}" class="block py-2 px-4 bg-blue-700 hover:bg-blue-600 rounded-md transition duration-300">
+        Freelancer Registration
+      </a>
+
+      <a href="{% url 'customer' %}" class="block py-2 px-4 bg-blue-700 hover:bg-blue-600 rounded-md transition duration-300">
+        Customer Registration
+      </a>
+
+      <a href="{% url 'partener' %}" class="block py-2 px-4 bg-blue-700 hover:bg-blue-600 rounded-md transition duration-300">
+        Partner Registration
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
